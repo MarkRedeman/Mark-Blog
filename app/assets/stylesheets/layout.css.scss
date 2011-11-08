@@ -1,0 +1,235 @@
+//	Color constants
+$header-background-color: #212121;
+$header-quote-color: #dedede;
+$header-text-color: #f7f7f7;
+$header-height: 150px;
+
+$navigation-background-color: #319cce;
+$navigation-text-color: #f7f7f7;
+$nav-height: 36px;
+
+$content-background-top-color: #d6d6d6;
+$content-background-bottom-color: #f2f2f2;
+$content-text-color: #000;
+
+$footer-background-color: #212121;
+$footer-text-color: #f7f7f7;
+$footer_height: 55px;
+
+@mixin body_gradient {
+	background-image: linear-gradient(			top, #212121 0px, $content-background-top-color ($header-height + $nav-height), $content-background-bottom-color 100%);
+	background-image: -o-linear-gradient(		top, #212121 0px, $content-background-top-color ($header-height + $nav-height), $content-background-bottom-color 100%);
+	background-image: -moz-linear-gradient(		top, #212121 0px, $content-background-top-color ($header-height + $nav-height), $content-background-bottom-color 100%);
+	background-image: -webkit-linear-gradient(	top, #212121 0px, $content-background-top-color ($header-height + $nav-height), $content-background-bottom-color 100%);
+	background-image: -ms-linear-gradient(		top, #212121 0px, $content-background-top-color ($header-height + $nav-height), $content-background-bottom-color 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0,							 #212121),
+		color-stop($header-height + $nav-height, $content-background-top-color),
+		color-stop(1,							 $content-background-bottom-color)
+	);
+}
+*{
+	border: 0;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.clear:after{
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+html, body {
+	width:			100%;
+	height:			100%;
+	margin:			0;
+	padding:		0;
+	font-family:	helvetica;
+	@include 		body_gradient;
+}
+
+.site{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	position: relative;
+	margin: 0px auto -55px;
+}
+.push{
+	height: $footer_height;
+}
+	.headerw, .contentw, .footerw, .navw{
+		width: 100%;
+	}
+	header, .content, footer, nav{
+		width: 950px;
+		margin: 0px auto;
+	}
+	
+	
+.headerw{
+	height: $header-height;
+	background-color: $header-background-color;
+
+	header {
+		height: inherit;
+		background-color:	inherit;
+		color:				$header-text-color;
+		
+		div#title {
+			font-size:	xx-large;
+			text-align:	right;
+			float:		left;
+			margin:		0 1em;
+			height:		100%;
+			
+			h1 {
+				font-size:	125%;
+				margin:		0.5em 0 0.25em;
+			}
+			
+			h2 {
+				font-size:	100%;
+				margin:		0;
+			}
+		}
+		
+		div#header_quote {
+			float:		right;
+			font-size:	large;
+			margin:		2em;
+		}
+	}
+}
+
+
+.navw {
+	background-color: #319cce;
+	height: $nav-height;
+
+	nav {
+		
+		background-color:	$navigation-background-color;
+		color:				$navigation-text-color;
+		height:				inherit;
+
+		ul {
+			list-style:	none;
+			padding:		0;
+			margin:		0;
+
+			li {
+			  border:		thin solid $header-background-color;
+			  border-width:	0 thin 0 0;
+			  padding:		0;
+			  margin:		0 0 0 0;
+			  float:		left;
+
+			  a {
+			      display:		block;
+			      font-size:	large;
+			      color:		black;
+			      line-height:	36px;
+			      padding:		0em 1.5em;
+
+			       #selected, &:hover {
+			           background-color:$header-background-color;
+			           color:			$header-text-color;
+			       }
+
+			       #selected {
+			           cursor:	default;
+			       }
+			  }
+			}
+		}
+	}
+}
+    
+
+.contentw{
+	color:		$content-text-color;
+	border-top: thin solid $header-background-color;;
+
+	#content {
+		height: inherit;
+
+	  
+		#main_content {
+			width: (555px + 130px);
+			float: left;
+		}
+
+	  	#side_bar_content {
+	    	width:				215px;
+	    	background-color:	darken($content-background-bottom-color, 5%); 
+	    
+		    border {
+		    	style:	solid;
+		    	size:	thin;
+		    	color:	darken($content-background-bottom-color, 15%);
+		    	top:	none;
+		    }
+		    border:		solid thin darken($content-background-bottom-color, 15%);
+		    border-top:	none;
+		    
+		    
+		    float: right;
+	  	}
+	  	p {
+	    	margin: 1em;
+	  	}
+	  
+		.containing #main_content { margin: 1em; }
+
+		#side_bar_content:hover {
+			cursor: pointer;
+			background-color:	darken($content-background-bottom-color, 10%);
+			border-color:		darken($content-background-bottom-color, 30%);
+		}
+
+		width: 950px;
+	 	margin: 0px auto;
+
+	}
+}
+.footerw{
+	height: $footer_height;
+	background-color: $footer-background-color;
+	
+	footer {
+		height: inherit;
+		background-color: 	inherit;
+		color: 				$footer-text-color;
+		text-align: 		center;
+		font-size: 			medium;
+		line-height: 		$footer_height;
+
+		p {
+			padding:	0;
+			margin:		0;
+		}
+	}
+}
+
+/* http://sonspring.com/journal/clearing-floats */
+.clear:after{
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+
+.extra_margin {
+  margin: 		1em;
+}

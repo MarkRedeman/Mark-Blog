@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Mark's Blog</title>
+      <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+    </head>
+
+    <body>
+    	
+
+
+      <div class="site">
+        <div class="headerw">
+          <%= render 'layouts/header' %>
+        </div>
+        <div class="navw">
+          <%= render 'layouts/navigation' %>
+        </div>
+        <div class="contentw">
+          <%= render 'layouts/content' %>
+        </div>
+        <div class = 'push'></div>
+      </div>
+      <div class="footerw">
+        <%= render "layouts/footer" %>
+      </div>    
+
+
+    </body>
+    
+</html>
