@@ -53,7 +53,7 @@ html, body {
 	margin:			0;
 	padding:		0;
 	font-family:	helvetica;
-	@include 		body_gradient;
+	@include		body_gradient;
 }
 
 .site{
@@ -170,16 +170,20 @@ html, body {
 
 	  	#side_bar_content {
 	    	width:				215px;
-	    	background-color:	darken($content-background-bottom-color, 5%); 
-	    
-		    border {
-		    	style:	solid;
-		    	size:	thin;
-		    	color:	darken($content-background-bottom-color, 15%);
-		    	top:	none;
-		    }
-		    border:		solid thin darken($content-background-bottom-color, 15%);
-		    border-top:	none;
+	    	button {
+	    		font-size: 100%;
+	    		padding: 1em;
+	    		width: inherit;
+		    	background-color:	darken($content-background-bottom-color, 5%); 
+			   	border:		solid thin darken($content-background-bottom-color, 15%);
+			   	margin-bottom: 1em;
+			}
+			
+			button:hover {
+				cursor: pointer;
+				background-color:	darken($content-background-bottom-color, 10%);
+				border-color:		darken($content-background-bottom-color, 30%);
+			}
 		    
 		    
 		    float: right;
@@ -189,12 +193,6 @@ html, body {
 	  	}
 	  
 		.containing #main_content { margin: 1em; }
-
-		#side_bar_content:hover {
-			cursor: pointer;
-			background-color:	darken($content-background-bottom-color, 10%);
-			border-color:		darken($content-background-bottom-color, 30%);
-		}
 
 		width: 950px;
 	 	margin: 0px auto;

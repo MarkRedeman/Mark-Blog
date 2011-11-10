@@ -24,8 +24,10 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
+
+  # Notifiers (één van beide verwijderen???)
   gem 'libnotify'
-  gem 'rb-inotify'
+  #gem 'rb-inotify'
 end
 
 # To use ActiveModel has_secure_password
