@@ -1,4 +1,7 @@
 Mark::Application.routes.draw do
+  get "articles/index"
+
+  resources :articles
   get "info/index"
 
   get "info/about"
@@ -6,6 +9,14 @@ Mark::Application.routes.draw do
   get "info/portfolio"
 
   root :to => 'info#index'
+
+  #
+  # Add later
+  #
+  # match 'archive/(:year(/:month(/:day(:.format))))'
+  #
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

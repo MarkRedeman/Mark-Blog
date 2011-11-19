@@ -2,11 +2,10 @@ require 'spec_helper'
 
 describe "Articles" do
   describe "GET /articles" do
-    it "works! (now write some real specs)" do
-    	'hello'
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get articles_index_path
-      response.status.should be(200)
+    it "Display some articles" do
+      visit articles_path
+      page.should have_content 'wiskunde'
+       
     end
   end
 end
