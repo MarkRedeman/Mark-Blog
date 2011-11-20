@@ -1,4 +1,11 @@
 <h1>Home</h1>
 <p>This page should display a welcome message and the 4 latest articles.</p>
 
+<% for article in @articles %>
+	<hr/>
+	<h2><%= article.title %></h2>
+	<p><%= article.body %></p>
+	<%= link_to 'Edit', edit_article_path(article) %>
+	<%= link_to 'Delete', article, :method => 'delete' %>
+<% end %>
 <%# This should render the articles index up to 4 articles %>
