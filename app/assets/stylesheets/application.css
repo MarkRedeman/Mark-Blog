@@ -5,3 +5,12 @@
  *= require_self
  *= require_tree . 
 */
+
+#flash_notice {
+	background: green;
+	border: 1px solid darken(green, 20%);
+
+	text-align: center;
+	padding: 5px;
+
+}

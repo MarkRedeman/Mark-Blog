@@ -1,7 +1,6 @@
 Mark::Application.routes.draw do
-  get "articles/index"
-
   resources :articles
+  
   get "info/index"
 
   get "info/about"
@@ -16,7 +15,7 @@ Mark::Application.routes.draw do
   # match 'archive/(:year(/:month(/:day(:.format))))'
   #
 
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
